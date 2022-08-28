@@ -1,13 +1,13 @@
 #include <iostream>
+#include <string>
 #include <cstdlib>
 
 
-using namespace std;
-
 /**
  * Función que muestra los participantes del grupo
+ * @param programa nombre del ejecutable
  */
-void participantes();
+void participantes(std::string programa);
 
 /**
  * Taller computacional
@@ -25,13 +25,13 @@ int main(int argc, char** argv) {
         // @TODO programar proyecto
     } else {
         // Mostrar los integrantes
-        participantes();
+        participantes(argv[0]);
     }
     return EXIT_SUCCESS;
 }
 
-void participantes() {
-    std::cout << std::endl << "=== Taller 01 ===" << std::endl;
+void participantes(std::string programa) {
+    std::cout << std::endl << "=== Taller " << programa << " ===" << std::endl;
     std::cout << std::endl << "Juanito"; // Reemplazar por su nombre
     std::cout << std::endl << "Pedrito"; // Reemplazar por su nombre
     std::cout << std::endl << "Dieguito" << std::endl; // Reemplazar por su nombre
