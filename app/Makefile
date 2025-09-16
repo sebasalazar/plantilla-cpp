@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -g3 -Wall -std=c++14
+CXXFLAGS = -g3 -Wall -Wextra -Wpedantic -std=c++17
 MKDIR = mkdir -p
 
 LIBS = -lm
@@ -7,10 +7,10 @@ LIBS = -lm
 directorios:
 	$(MKDIR) build dist
 
-main.o: directorios main.cpp
+build/main.o: directorios main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp -o build/main.o
 
-all: clean main.o
+all: clean build/main.o
 	$(CXX) $(CXXFLAGS) -o dist/programa \
 	build/main.o \
 	$(LIBS)
